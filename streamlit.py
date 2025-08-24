@@ -124,12 +124,6 @@ def your_generation_function(image1, image2):
             print(f"  Display img stats: Min={display_img.min()}, Max={display_img.max()}")
             print(f"  Mean RGB: {display_img.mean(axis=(0, 1))}")
 
-            tf.keras.utils.save_img(
-                f'./save_here6/blue_image_{i:05d}.jpeg',
-                display_img,
-                file_format='jpeg'
-            )
-
     print("\n🎉 Training Complete!")
 
     final_img = vgg_to_display(generatedImg[0])
@@ -169,6 +163,4 @@ def main():
 
 
 if __name__ == "__main__":
-    import os
-    os.makedirs('save_here6', exist_ok=True)
     main()
