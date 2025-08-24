@@ -64,15 +64,16 @@ def your_generation_function(image1, image2):
     contentImg = preprocess_pil_image(image2)
     generatedImg = tf.Variable(contentImg, trainable=True)
 
-    optimizer = tf.keras.optimizers.Adam(learning_rate=0.02)
+    optimizer = tf.keras.optimizers.Adam(learning_rate=0.08)
 
-    epochs = 20000
-    display_interval = 100
+    epochs = 2000
+    display_interval = 5
 
     # For Streamlit display
     st_placeholder = st.empty()
 
     for i in range(epochs + 1):
+        print(i)
         with tf.GradientTape() as tape:
             generated_vgg = generatedImg
 
